@@ -46,33 +46,3 @@ export const GraphQLMemberIdType = new GraphQLEnumType({
     },
   },
 });
-
-export const CreatePostInput = new GraphQLInputObjectType({
-  name: 'CreatePostInput',
-  fields: () => ({
-    title: {
-      type: GraphQLString,
-    },
-    content: {
-      type: GraphQLString,
-    },
-    authorId: {
-      type: UUIDType,
-    },
-  }),
-});
-
-export const ChangePostInput = new GraphQLInputObjectType({
-  name: 'ChangePostInput',
-  fields: () => ({
-    title: {
-      type: GraphQLString,
-    },
-    content: {
-      type: GraphQLString,
-    },
-    authorId: {
-      type: UUIDType,
-    },
-  }),
-});

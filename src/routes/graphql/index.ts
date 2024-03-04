@@ -5,13 +5,13 @@ import { validate } from 'graphql/validation/validate.js';
 import depthLimit from 'graphql-depth-limit';
 
 import { rootQuery } from './GraphQLSchema/root/rootQuery.js';
-// import { rootMutation } from './GraphQLSchema/root/rootMutation.js';
+import { rootMutation } from './GraphQLSchema/root/rootMutation.js';
 
 const DEPTH_LIMIT = 5;
 
 export const schema = new GraphQLSchema({
   query: rootQuery,
-  // mutation: rootMutation,
+  mutation: rootMutation,
 });
 
 const plugin: FastifyPluginAsyncTypebox = async (fastify) => {

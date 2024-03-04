@@ -11,7 +11,7 @@ import {
   GraphQlProfileType,
   CreateProfileInput,
   ChangeProfileInput,
-} from '../profiles/schems.js';
+} from '../profiles/schema.js';
 import { UUIDType } from '../../types/uuid.js';
 import { CreateUserInput, GraphQlUserType, ChangeUserInput } from '../user/schema.js';
 
