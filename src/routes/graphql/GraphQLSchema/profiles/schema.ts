@@ -50,3 +50,22 @@ export const GraphQlProfileType = new GraphQLObjectType({
     },
   }),
 });
+
+export const CreateProfileInput = new GraphQLInputObjectType({
+  name: 'CreateProfileInput',
+  fields: {
+    userId: { type: UUIDType },
+    memberTypeId: { type: GraphQLMemberIdType },
+    isMale: { type: GraphQLBoolean },
+    yearOfBirth: { type: GraphQLInt },
+  },
+});
+
+export const ChangeProfileInput = new GraphQLInputObjectType({
+  name: 'ChangeProfileInput',
+  fields: {
+    memberTypeId: { type: GraphQLMemberIdType },
+    isMale: { type: GraphQLBoolean },
+    yearOfBirth: { type: GraphQLInt },
+  },
+});

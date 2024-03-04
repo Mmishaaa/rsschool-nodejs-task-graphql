@@ -4,8 +4,11 @@ import {
   GraphQLEnumType,
   GraphQLFloat,
   GraphQLList,
+  GraphQLInputObjectType,
+  GraphQLString,
 } from 'graphql';
 import { GraphQlPostType } from '../posts/schema.js';
+import { UUIDType } from '../../types/uuid.js';
 
 export const GraphQLMemberType = new GraphQLObjectType({
   name: 'MemberType',
@@ -42,4 +45,34 @@ export const GraphQLMemberIdType = new GraphQLEnumType({
       value: 'basic',
     },
   },
+});
+
+export const CreatePostInput = new GraphQLInputObjectType({
+  name: 'CreatePostInput',
+  fields: () => ({
+    title: {
+      type: GraphQLString,
+    },
+    content: {
+      type: GraphQLString,
+    },
+    authorId: {
+      type: UUIDType,
+    },
+  }),
+});
+
+export const ChangePostInput = new GraphQLInputObjectType({
+  name: 'ChangePostInput',
+  fields: () => ({
+    title: {
+      type: GraphQLString,
+    },
+    content: {
+      type: GraphQLString,
+    },
+    authorId: {
+      type: UUIDType,
+    },
+  }),
 });
