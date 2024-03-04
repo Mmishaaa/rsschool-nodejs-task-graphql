@@ -2,9 +2,20 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import AutoLoad, { AutoloadPluginOptions } from '@fastify/autoload';
 import { FastifyPluginAsync } from 'fastify';
+import { GraphQLSchema } from 'graphql';
+
+import { rootQuery } from './GraphQLScheme/root/rootQuery.js';
+import { rootMutation } from './GraphQLScheme/root/rootMutation.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+
+const DEPTH_LIMIT = 5;
+
+export const schema = new GraphQLSchema({
+  query: rootQuery,
+  mutation: rootMutation,
+});
 
 const opts: Partial<AutoloadPluginOptions> = {
   ignoreFilter: (path: string) => {
