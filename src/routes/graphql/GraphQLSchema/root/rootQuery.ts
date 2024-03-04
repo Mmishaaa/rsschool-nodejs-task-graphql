@@ -1,6 +1,6 @@
 import { GraphQLList, GraphQLNonNull, GraphQLObjectType, GraphQLString } from 'graphql';
-import { GraphQlUserType } from '../user/schema.ts';
-import { GraphQlProfileType } from '../profiles/schems.js';
+import { GraphQlUserType } from '../user/schema.js';
+import { GraphQlProfileType } from '../profiles/schema.js';
 import { GraphQlPostType } from '../posts/schema.js';
 import { GraphQLMemberType, GraphQLMemberIdType } from '../member-types/schema.js';
 import { UUIDType } from '../../types/uuid.js';

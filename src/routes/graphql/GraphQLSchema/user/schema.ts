@@ -8,7 +8,7 @@ import {
   GraphQLInputObjectType,
 } from 'graphql';
 import { UUIDType } from '../../types/uuid.js';
-import { GraphQlProfileType } from '../profiles/schems.js';
+import { GraphQlProfileType } from '../profiles/schema.js';
 import { GraphQlPostType } from '../posts/schema.js';
 
 export const GraphQlUserType = new GraphQLObjectType({

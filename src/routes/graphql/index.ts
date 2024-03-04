@@ -4,14 +4,14 @@ import { GraphQLSchema, graphql, parse } from 'graphql';
 import { validate } from 'graphql/validation/validate.js';
 import depthLimit from 'graphql-depth-limit';
 
-import { rootQuery } from './GraphQLScheme/root/rootQuery.js';
-import { rootMutation } from './GraphQLScheme/root/rootMutation.js';
+import { rootQuery } from './GraphQLSchema/root/rootQuery.js';
+// import { rootMutation } from './GraphQLSchema/root/rootMutation.js';
 
 const DEPTH_LIMIT = 5;
 
 export const schema = new GraphQLSchema({
   query: rootQuery,
-  mutation: rootMutation,
+  // mutation: rootMutation,
 });
 
 const plugin: FastifyPluginAsyncTypebox = async (fastify) => {
